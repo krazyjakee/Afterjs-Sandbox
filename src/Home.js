@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './react.svg';
 import './Home.css';
 import { Link } from 'react-router-dom';
+import { format } from 'date-fns';
 
 class Home extends Component {
   static async getInitialProps({ req, res, match, history, location, ...ctx }) {
@@ -18,6 +19,7 @@ class Home extends Component {
         <p className="Home-intro">
           To get started, edit <code>src/Home.js</code> or{' '}
           <code>src/About.js</code>and save to reload.
+          {format(new Date(), 'Do MMM, YYYY')}
         </p>
         <Link to="/about">About -></Link>
       </div>
